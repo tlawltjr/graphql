@@ -1,0 +1,20 @@
+type Member{
+    id: ID!
+    name: String!
+    age: Int!
+    car: [Car]
+}
+type Car{
+    id: ID!
+    name: String!
+    memberId: Int!
+}
+
+type Query{
+    getMember(id: ID!): Member
+    getMembers: [Member]
+}
+
+type Mutation{
+    save(name: String!, age: Int!): Member
+}
